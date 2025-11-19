@@ -1,0 +1,235 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f6fa;
+  margin: 0;
+  padding: 0;
+  color: #2f3640;
+
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  min-height: 100vh;    
+}
+
+.container {
+  max-width: 900px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#timetable-form {
+  width: 100%;
+  max-width: 450px; 
+  box-sizing: border-box;
+}
+
+button {
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.toggle-table-btn {
+  background-color: #4a69bd;
+  color: white;
+}
+
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #e84118;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#timetable-form h2 {
+  margin-bottom: 16px;
+  font-size: 20px;
+  color: #273c75;
+}
+
+#timetable-form input[type="time"],
+#timetable-form input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin: 6px 0 12px;
+  border: 1px solid #dcdde1;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+#day-subjects .day-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+#day-subjects .day-input label {
+  width: 100px;
+  font-weight: 500;
+}
+
+#timetable-form .form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+#timetable-form .form-buttons button {
+  background-color: #4a69bd;
+  color: white;
+  font-weight: 500;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+  table-layout: fixed;       
+  word-wrap: break-word;  
+}
+
+th, td {
+  border: 1px solid #dcdde1;
+  padding: 6px 8px;
+  text-align: center;
+  overflow-wrap: break-word; 
+}
+
+th {
+  background-color: #4a69bd;
+  color: white;
+}
+
+.actions button {
+  background-color: #273c75;
+  color: white;
+  margin: 2px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.actions button.delete-btn {
+  background-color: #e84118;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(47, 54, 64, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  z-index: 1000;
+  padding: 20px;        
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  position: relative;
+  margin: 0 auto;        
+}
+
+.modal-content input[type="time"],
+.modal-content input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin: 6px 0 12px;
+  border: 1px solid #dcdde1;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.modal-content .form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modal-content .form-buttons button[type="submit"] {
+  background-color: #4cd137;
+  color: white;
+}
+
+.modal-content .form-buttons button[type="button"] {
+  background-color: #e84118;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  #day-subjects .day-input {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #day-subjects .day-input label {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  .modal-content {
+    padding: 20px 15px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 4px 6px;
+  }
+}
+.notification-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4cd137;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  font-weight: 500;
+  z-index: 2000;
+  animation: fadeinout 3s forwards;
+}
+
+@keyframes fadeinout {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
